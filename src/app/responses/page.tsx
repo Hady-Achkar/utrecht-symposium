@@ -113,7 +113,7 @@ export default function ResponsesPage() {
   if (loading && registrations.length === 0) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <Loader2 className="h-8 w-8 animate-spin text-[#673ab7]" />
+        <Loader2 className="h-8 w-8 animate-spin text-[#fa2a2a]" />
       </div>
     )
   }
@@ -204,7 +204,7 @@ export default function ResponsesPage() {
                         {registration.comments || "-"}
                       </td>
                       <td className="px-4 py-3">
-                        <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                        <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
                           <span>{languageFlags[registration.language] || ""}</span>
                           <span>{registration.language.toUpperCase()}</span>
                         </span>

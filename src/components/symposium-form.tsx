@@ -105,7 +105,7 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
     return (
       <div className="min-h-screen bg-[#f0ebf8] flex items-center justify-center p-4">
         <div className="max-w-2xl w-full">
-          <div className="bg-white rounded-lg border-t-[10px] border-t-[#673ab7] p-8 text-center">
+          <div className="bg-white rounded-lg border-t-[10px] border-t-[#fa2a2a] p-8 text-center">
             <h2 className="text-2xl font-normal text-[#202124] mb-4">
               {t.success}
             </h2>
@@ -120,7 +120,7 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
             </p>
             <button
               onClick={() => setSubmitted(false)}
-              className="text-[#673ab7] hover:underline font-medium"
+              className="text-[#fa2a2a] hover:underline font-medium"
             >
               {language === "nl"
                 ? "Nog een antwoord verzenden"
@@ -143,7 +143,7 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
     >
       <div className="max-w-3xl mx-auto">
         {/* Header Card */}
-        <div className="bg-white rounded-lg overflow-hidden border-t-[10px] border-t-[#673ab7] mb-3">
+        <div className="bg-white rounded-lg overflow-hidden border-t-[10px] border-t-[#fa2a2a] mb-3">
           {/* Header Image */}
           <div className="w-full h-64 relative overflow-hidden">
             <Image
@@ -168,7 +168,7 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
                 href="https://maps.app.goo.gl/Q4MLGnDBjHxJE2X47"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-base text-[#5f6368] hover:text-[#673ab7] hover:underline flex items-center gap-2 transition-colors"
+                className="text-base text-[#5f6368] hover:text-[#fa2a2a] hover:underline flex items-center gap-2 transition-colors"
               >
                 <span>📍</span> {t.venue}
               </a>
@@ -199,7 +199,7 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
                 }
                 placeholder={""}
                 required
-                className="w-full border-b border-[#dadce0] focus:border-b-2 focus:border-[#673ab7] outline-none py-1 text-sm text-[#202124] placeholder:text-[#70757a] transition-colors"
+                className="w-full border-b border-[#dadce0] focus:border-b-2 focus:border-[#fa2a2a] outline-none py-1 text-sm text-[#202124] placeholder:text-[#70757a] transition-colors"
               />
             </div>
           </div>
@@ -229,7 +229,7 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
                           otherRole: "",
                         })
                       }
-                      className="w-5 h-5 text-[#673ab7] border-2 border-[#5f6368] focus:ring-[#673ab7] focus:ring-offset-0 cursor-pointer"
+                      className="w-5 h-5 text-[#fa2a2a] border-2 border-[#5f6368] focus:ring-[#fa2a2a] focus:ring-offset-0 cursor-pointer"
                       required
                     />
                     <span className="ml-3 text-sm text-[#202124]">
@@ -251,7 +251,7 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
                       setFormData({ ...formData, otherRole: e.target.value })
                     }
                     placeholder={t.otherRolePlaceholder}
-                    className="w-full border-b border-[#dadce0] focus:border-b-2 focus:border-[#673ab7] outline-none py-1 text-sm text-[#202124] placeholder:text-[#70757a] transition-colors"
+                    className="w-full border-b border-[#dadce0] focus:border-b-2 focus:border-[#fa2a2a] outline-none py-1 text-sm text-[#202124] placeholder:text-[#70757a] transition-colors"
                     required={formData.role === "other"}
                   />
                 </div>
@@ -274,7 +274,7 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
                 }
                 placeholder={t.contactPlaceholder}
                 required
-                className="w-full border-b border-[#dadce0] focus:border-b-2 focus:border-[#673ab7] outline-none py-1 text-sm text-[#202124] placeholder:text-[#70757a] transition-colors"
+                className="w-full border-b border-[#dadce0] focus:border-b-2 focus:border-[#fa2a2a] outline-none py-1 text-sm text-[#202124] placeholder:text-[#70757a] transition-colors"
               />
             </div>
           </div>
@@ -292,7 +292,7 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
                 }
                 placeholder={t.commentsPlaceholder}
                 rows={3}
-                className="w-full border-b border-[#dadce0] focus:border-b-2 focus:border-[#673ab7] outline-none py-1 text-sm text-[#202124] placeholder:text-[#70757a] transition-colors resize-none"
+                className="w-full border-b border-[#dadce0] focus:border-b-2 focus:border-[#fa2a2a] outline-none py-1 text-sm text-[#202124] placeholder:text-[#70757a] transition-colors resize-none"
               />
             </div>
           </div>
@@ -311,7 +311,7 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
               disabled={
                 loading || !formData.name || !formData.role || !formData.contact
               }
-              className="bg-[#673ab7] text-white px-6 py-2 rounded hover:bg-[#5e35b1] disabled:opacity-50 disabled:cursor-not-allowed font-medium text-sm transition-colors flex items-center gap-2"
+              className="bg-[#fa2a2a] text-white px-6 py-2 rounded hover:bg-[#d91f1f] disabled:opacity-50 disabled:cursor-not-allowed font-medium text-sm transition-colors flex items-center gap-2"
             >
               {loading && <Loader2 className="h-4 w-4 animate-spin" />}
               {loading ? t.submitting : t.submit}
@@ -329,7 +329,7 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
                 });
                 setError("");
               }}
-              className="text-[#673ab7] hover:bg-[#f8f9fa] px-4 py-2 rounded font-medium text-sm transition-colors"
+              className="text-[#fa2a2a] hover:bg-[#f8f9fa] px-4 py-2 rounded font-medium text-sm transition-colors"
             >
               {language === "nl"
                 ? "Formulier wissen"

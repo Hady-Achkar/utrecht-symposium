@@ -15,23 +15,23 @@ export function LanguageLanding() {
   const handleLanguageSelect = (languageCode: string) => {
     router.push(`/form?lang=${languageCode}`);
   };
-
+  //#fa2a2a
   return (
     <div className="min-h-screen bg-[#f0ebf8] flex items-center justify-center p-4">
       <div className="max-w-4xl w-full">
-        <div className="bg-white rounded-lg border-t-[10px] border-t-[#673ab7] p-8">
+        <div className="bg-white rounded-lg border-t-[10px] border-t-[#fa2a2a] p-8">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-[#673ab7] mb-4">
-              Symposium Aanmelding
+            <h1 className="text-3xl font-bold text-[#fa2a2a] mb-4">
+              Aanmelden Symposium
             </h1>
             <p className="text-lg text-[#5f6368] mb-2">
-              📅 15 October / oktober 2025 · 19:30
+              📅 Oktober 2025 · 19:30
             </p>
             <a
               href="https://maps.app.goo.gl/Q4MLGnDBjHxJE2X47"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#5f6368] hover:text-[#673ab7] hover:underline inline-flex items-center gap-1 transition-colors"
+              className="text-[#5f6368] hover:text-[#fa2a2a] hover:underline inline-flex items-center gap-1 transition-colors"
             >
               📍 Huis van Actief Burgerschap, Bibliotheek Neude, Utrecht
             </a>
@@ -47,7 +47,7 @@ export function LanguageLanding() {
                 <button
                   key={lang.code}
                   onClick={() => handleLanguageSelect(lang.code)}
-                  className="group relative bg-white border-2 border-[#dadce0] rounded-lg p-6 hover:border-[#673ab7] hover:shadow-lg transition-all duration-200 transform hover:-translate-y-1"
+                  className="group relative bg-white border-2 border-[#dadce0] rounded-lg p-6 hover:border-[#fa2a2a] hover:shadow-lg transition-all duration-200 transform hover:-translate-y-1"
                   dir={lang.rtl ? "rtl" : "ltr"}
                 >
                   <div className="text-center">
@@ -55,7 +55,7 @@ export function LanguageLanding() {
                     <div className="text-[#202124] font-medium text-lg mb-1">
                       {lang.name}
                     </div>
-                    <div className="text-[#673ab7] text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="text-[#fa2a2a] text-sm opacity-0 group-hover:opacity-100 transition-opacity">
                       {lang.welcome}
                     </div>
                   </div>
