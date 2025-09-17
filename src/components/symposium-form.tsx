@@ -4,17 +4,18 @@ import { useState } from "react";
 import { LanguageSelector } from "./language-selector";
 import { createClient } from "@/lib/supabase";
 import { Loader2 } from "lucide-react";
+import { Translation } from "@/types/translations";
 
 import nlTranslations from "@/translations/nl.json";
 import enTranslations from "@/translations/en.json";
 import arTranslations from "@/translations/ar.json";
 import trTranslations from "@/translations/tr.json";
 
-const translations: Record<string, any> = {
-  nl: nlTranslations,
-  en: enTranslations,
-  ar: arTranslations,
-  tr: trTranslations,
+const translations: Record<string, Translation> = {
+  nl: nlTranslations as Translation,
+  en: enTranslations as Translation,
+  ar: arTranslations as Translation,
+  tr: trTranslations as Translation,
 };
 
 interface SymposiumFormProps {
