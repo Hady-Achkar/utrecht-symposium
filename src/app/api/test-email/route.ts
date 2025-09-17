@@ -25,7 +25,7 @@ export async function GET() {
 
     // Send test email
     const { data, error } = await resend.emails.send({
-      from: "Symposium Test <noreply@resend.dev>",
+      from: process.env.FROM_EMAIL || "Symposium Test <noreply@resend.dev>",
       to: [process.env.NOTIFICATION_EMAIL],
       subject: "Test Email - Symposium Registration System",
       html: `

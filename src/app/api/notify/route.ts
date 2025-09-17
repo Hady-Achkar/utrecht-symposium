@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     if (process.env.RESEND_API_KEY && process.env.NOTIFICATION_EMAIL) {
       try {
         const { data, error } = await resend.emails.send({
-          from: "Symposium <noreply@resend.dev>",
+          from: process.env.FROM_EMAIL || "Symposium <noreply@resend.dev>",
           to: [process.env.NOTIFICATION_EMAIL],
           subject: `Nieuwe Symposium Registratie - ${name}`,
           html: `

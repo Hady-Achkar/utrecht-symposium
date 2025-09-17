@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { LanguageSelector } from "./language-selector";
 import { createClient } from "@/lib/supabase";
 import { Loader2 } from "lucide-react";
@@ -129,13 +130,18 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
         {/* Header Card */}
         <div className="bg-white rounded-lg overflow-hidden border-t-[10px] border-t-[#673ab7] mb-3">
           {/* Header Image */}
-          <div className="w-full h-48 bg-gradient-to-r from-[#673ab7] to-[#8b5cf6] relative overflow-hidden">
-            <div className="absolute inset-0 bg-black/20" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center text-white">
-                <p className="text-5xl mb-2">🏫</p>
-                <p className="text-lg font-medium">Utrecht Symposium 2024</p>
-              </div>
+          <div className="w-full h-64 relative overflow-hidden">
+            <Image
+              src="/header-image.jpg"
+              alt="Utrecht Symposium 2024"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h2 className="text-2xl font-bold">Utrecht Symposium 2024</h2>
+              <p className="text-lg opacity-90">Education • Language • Opportunity</p>
             </div>
           </div>
           <div className="p-6">
