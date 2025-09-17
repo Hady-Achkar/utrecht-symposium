@@ -23,6 +23,8 @@ export interface Translation {
     error: string
     required: string
     selectRole: string
+    otherRole: string
+    otherRolePlaceholder: string
   }
   language: {
     select: string

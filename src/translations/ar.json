@@ -22,7 +22,9 @@
     "success": "تم استلام تسجيلك بنجاح!",
     "error": "حدث خطأ. حاول مرة أخرى.",
     "required": "حقل مطلوب",
-    "selectRole": "اختر الدور"
+    "selectRole": "اختر الدور",
+    "otherRole": "حدد دورك",
+    "otherRolePlaceholder": "مثل: طالب، باحث، إلخ"
   },
   "language": {
     "select": "اختر اللغة",

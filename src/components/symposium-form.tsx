@@ -31,6 +31,7 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     role: "",
+    otherRole: "",
     contact: "",
     comments: "",
   });
@@ -50,7 +51,10 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
         .from("symposium_registrations")
         .insert([
           {
-            ...formData,
+            name: formData.name,
+            role: formData.role === "other" ? `other: ${formData.otherRole}` : formData.role,
+            contact: formData.contact,
+            comments: formData.comments,
             language,
             created_at: new Date().toISOString(),
           },
@@ -65,7 +69,10 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          ...formData,
+          name: formData.name,
+          role: formData.role === "other" ? `other: ${formData.otherRole}` : formData.role,
+          contact: formData.contact,
+          comments: formData.comments,
           language,
         }),
       });
@@ -74,6 +81,7 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
       setFormData({
         name: "",
         role: "",
+        otherRole: "",
         contact: "",
         comments: "",
       });
@@ -119,7 +127,17 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
     >
       <div className="max-w-3xl mx-auto">
         {/* Header Card */}
-        <div className="bg-white rounded-lg border-t-[10px] border-t-[#673ab7] mb-3">
+        <div className="bg-white rounded-lg overflow-hidden border-t-[10px] border-t-[#673ab7] mb-3">
+          {/* Header Image */}
+          <div className="w-full h-48 bg-gradient-to-r from-[#673ab7] to-[#8b5cf6] relative overflow-hidden">
+            <div className="absolute inset-0 bg-black/20" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center text-white">
+                <p className="text-5xl mb-2">🏫</p>
+                <p className="text-lg font-medium">Utrecht Symposium 2024</p>
+              </div>
+            </div>
+          </div>
           <div className="p-6">
             <h1 className="text-[32px] font-normal text-[#202124] leading-[135%]">
               {t.title}
@@ -177,7 +195,7 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
                       name="role"
                       value={value}
                       checked={formData.role === value}
-                      onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+                      onChange={(e) => setFormData({ ...formData, role: e.target.value, otherRole: "" })}
                       className="w-5 h-5 text-[#673ab7] border-2 border-[#5f6368] focus:ring-[#673ab7] focus:ring-offset-0 cursor-pointer"
                       required
                     />
@@ -185,6 +203,22 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
                   </label>
                 ))}
               </div>
+              {/* Other Role Input */}
+              {formData.role === "other" && (
+                <div className="mt-4 pl-8">
+                  <label className="block text-sm text-[#202124] font-medium mb-2">
+                    {t.otherRole}
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.otherRole}
+                    onChange={(e) => setFormData({ ...formData, otherRole: e.target.value })}
+                    placeholder={t.otherRolePlaceholder}
+                    className="w-full border-b border-[#dadce0] focus:border-b-2 focus:border-[#673ab7] outline-none py-1 text-sm text-[#202124] placeholder:text-[#70757a] transition-colors"
+                    required={formData.role === "other"}
+                  />
+                </div>
+              )}
             </div>
           </div>
 
@@ -246,6 +280,7 @@ export function SymposiumForm({ initialLanguage = "nl" }: SymposiumFormProps) {
                 setFormData({
                   name: "",
                   role: "",
+                  otherRole: "",
                   contact: "",
                   comments: "",
                 });

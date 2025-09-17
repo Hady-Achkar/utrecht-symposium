@@ -22,7 +22,9 @@
     "success": "Your registration has been successfully received!",
     "error": "An error occurred. Please try again.",
     "required": "Required field",
-    "selectRole": "Select a role"
+    "selectRole": "Select a role",
+    "otherRole": "Specify your role",
+    "otherRolePlaceholder": "E.g. Student, Researcher, etc."
   },
   "language": {
     "select": "Select language",

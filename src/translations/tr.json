@@ -22,7 +22,9 @@
     "success": "Kaydınız başarıyla alındı!",
     "error": "Bir hata oluştu. Lütfen tekrar deneyin.",
     "required": "Zorunlu alan",
-    "selectRole": "Bir rol seçin"
+    "selectRole": "Bir rol seçin",
+    "otherRole": "Rolünüzü belirtin",
+    "otherRolePlaceholder": "Ör. Öğrenci, Araştırmacı, vb."
   },
   "language": {
     "select": "Dil seçin",

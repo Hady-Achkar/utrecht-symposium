@@ -22,7 +22,9 @@
     "success": "Uw registratie is succesvol ontvangen!",
     "error": "Er is een fout opgetreden. Probeer het opnieuw.",
     "required": "Verplicht veld",
-    "selectRole": "Selecteer een rol"
+    "selectRole": "Selecteer een rol",
+    "otherRole": "Specificeer uw rol",
+    "otherRolePlaceholder": "Bijv. Student, Onderzoeker, etc."
   },
   "language": {
     "select": "Taal selecteren",
