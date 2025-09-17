@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import headerImage from "../../public/header-image.jpg";
+import headerImage from "../images/header-image.jpg";
 import { LanguageSelector } from "./language-selector";
 import { createClient } from "@/lib/supabase";
 import { Loader2 } from "lucide-react";
