@@ -1,0 +1,34 @@
+{
+  "form": {
+    "title": "Symposium: Kansenongelijkheid en de kracht van taal in het basisonderwijs",
+    "date": "Woensdagavond 15 oktober om 19:30",
+    "venue": "Huis van Actief Burgerschap, Bibliotheek Neude, Utrecht",
+    "name": "Wat is uw voor- en achternaam?",
+    "namePlaceholder": "Jan Jansen",
+    "role": "Bent u ouder, beleidsmaker of betrokken bij dit thema vanuit school?",
+    "roleOptions": {
+      "parent": "Ouder",
+      "policyMaker": "Beleidsmaker",
+      "expert": "Expert",
+      "school": "Vanuit school (leraar, directeur etc.)",
+      "other": "Anders (student)"
+    },
+    "contact": "Wat is uw telefoonnummer of e-mailadres?",
+    "contactPlaceholder": "voorbeeld@email.com of 06-12345678",
+    "comments": "Opmerkingen en/of vragen",
+    "commentsPlaceholder": "Uw opmerkingen of vragen...",
+    "submit": "Verzenden",
+    "submitting": "Verzenden...",
+    "success": "Uw registratie is succesvol ontvangen!",
+    "error": "Er is een fout opgetreden. Probeer het opnieuw.",
+    "required": "Verplicht veld",
+    "selectRole": "Selecteer een rol"
+  },
+  "language": {
+    "select": "Taal selecteren",
+    "nl": "Nederlands",
+    "en": "English",
+    "ar": "العربية",
+    "tr": "Türkçe"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "form": {
+    "title": "Symposium: Inequality of Opportunity and the Power of Language in Primary Education",
+    "date": "Wednesday evening, October 15 at 7:30 PM",
+    "venue": "House of Active Citizenship, Neude Library, Utrecht",
+    "name": "What is your first and last name?",
+    "namePlaceholder": "John Doe",
+    "role": "Are you a parent, policymaker, or involved in this topic from school?",
+    "roleOptions": {
+      "parent": "Parent",
+      "policyMaker": "Policymaker",
+      "expert": "Expert",
+      "school": "From school (teacher, principal, etc.)",
+      "other": "Other (student)"
+    },
+    "contact": "What is your phone number or email address?",
+    "contactPlaceholder": "example@email.com or 06-12345678",
+    "comments": "Comments and/or questions",
+    "commentsPlaceholder": "Your comments or questions...",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "success": "Your registration has been successfully received!",
+    "error": "An error occurred. Please try again.",
+    "required": "Required field",
+    "selectRole": "Select a role"
+  },
+  "language": {
+    "select": "Select language",
+    "nl": "Nederlands",
+    "en": "English",
+    "ar": "العربية",
+    "tr": "Türkçe"
+  }
+}

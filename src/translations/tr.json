@@ -1,0 +1,34 @@
+{
+  "form": {
+    "title": "Sempozyum: İlköğretimde Fırsat Eşitsizliği ve Dilin Gücü",
+    "date": "15 Ekim Çarşamba akşamı saat 19:30",
+    "venue": "Aktif Vatandaşlık Evi, Neude Kütüphanesi, Utrecht",
+    "name": "Adınız ve soyadınız nedir?",
+    "namePlaceholder": "Ahmet Yılmaz",
+    "role": "Veli, politika yapıcı mısınız yoksa okuldan bu konuyla ilgili misiniz?",
+    "roleOptions": {
+      "parent": "Veli",
+      "policyMaker": "Politika Yapıcı",
+      "expert": "Uzman",
+      "school": "Okuldan (öğretmen, müdür vb.)",
+      "other": "Diğer (öğrenci)"
+    },
+    "contact": "Telefon numaranız veya e-posta adresiniz nedir?",
+    "contactPlaceholder": "ornek@email.com veya 06-12345678",
+    "comments": "Yorumlar ve/veya sorular",
+    "commentsPlaceholder": "Yorumlarınız veya sorularınız...",
+    "submit": "Gönder",
+    "submitting": "Gönderiliyor...",
+    "success": "Kaydınız başarıyla alındı!",
+    "error": "Bir hata oluştu. Lütfen tekrar deneyin.",
+    "required": "Zorunlu alan",
+    "selectRole": "Bir rol seçin"
+  },
+  "language": {
+    "select": "Dil seçin",
+    "nl": "Nederlands",
+    "en": "English",
+    "ar": "العربية",
+    "tr": "Türkçe"
+  }
+}
