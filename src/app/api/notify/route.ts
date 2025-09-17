@@ -1,27 +1,27 @@
-import { NextResponse } from "next/server"
-import { Resend } from "resend"
+import { NextResponse } from "next/server";
+import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const roleLabels: Record<string, string> = {
   parent: "Ouder / Parent",
   policyMaker: "Beleidsmaker / Policy Maker",
   expert: "Expert",
   school: "Vanuit school / School Staff",
-  other: "Anders (student) / Other (student)",
-}
+  other: "Anders / Other",
+};
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
-    const { name, role, contact, comments, language } = body
+    const body = await request.json();
+    const { name, role, contact, comments, language } = body;
 
     console.log("Processing registration:", {
       name,
       role,
       contact,
       language,
-    })
+    });
 
     // Send email notification
     if (process.env.RESEND_API_KEY && process.env.NOTIFICATION_EMAIL) {
@@ -125,34 +125,38 @@ export async function POST(request: Request) {
                 </div>
 
                 <div class="footer">
-                  <p>📅 Registratie ontvangen op ${new Date().toLocaleString('nl-NL')}</p>
+                  <p>📅 Registratie ontvangen op ${new Date().toLocaleString(
+                    "nl-NL"
+                  )}</p>
                   <p>Dit is een automatisch gegenereerd bericht</p>
                 </div>
               </body>
             </html>
           `,
-        })
+        });
 
         if (error) {
-          console.error("Resend error:", error)
+          console.error("Resend error:", error);
           // Don't throw error - let the registration continue even if email fails
         } else {
-          console.log("Email sent successfully:", data)
+          console.log("Email sent successfully:", data);
         }
       } catch (emailError) {
-        console.error("Error sending email:", emailError)
+        console.error("Error sending email:", emailError);
         // Don't throw error - let the registration continue even if email fails
       }
     } else {
-      console.log("Email skipped - missing RESEND_API_KEY or NOTIFICATION_EMAIL")
+      console.log(
+        "Email skipped - missing RESEND_API_KEY or NOTIFICATION_EMAIL"
+      );
     }
 
-    return NextResponse.json({ success: true })
+    return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Error processing notification:", error)
+    console.error("Error processing notification:", error);
     return NextResponse.json(
       { error: "Failed to process notification" },
       { status: 500 }
-    )
+    );
   }
 }

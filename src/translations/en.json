@@ -2,7 +2,7 @@
   "form": {
     "title": "Symposium: Inequality of Opportunity and the Power of Language in Primary Education",
     "date": "Wednesday evening, October 15 at 7:30 PM",
-    "venue": "House of Active Citizenship, Neude Library, Utrecht",
+    "venue": "Huis van Actief Burgerschap, Bibliotheek Neude, Utrecht",
     "name": "What is your first and last name?",
     "namePlaceholder": "John Doe",
     "role": "Are you a parent, policymaker, or involved in this topic from school?",
@@ -11,7 +11,7 @@
       "policyMaker": "Policymaker",
       "expert": "Expert",
       "school": "From school (teacher, principal, etc.)",
-      "other": "Other (student)"
+      "other": "Other"
     },
     "contact": "What is your phone number or email address?",
     "contactPlaceholder": "example@email.com or 06-12345678",

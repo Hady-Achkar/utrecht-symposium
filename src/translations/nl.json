@@ -11,7 +11,7 @@
       "policyMaker": "Beleidsmaker",
       "expert": "Expert",
       "school": "Vanuit school (leraar, directeur etc.)",
-      "other": "Anders (student)"
+      "other": "Anders"
     },
     "contact": "Wat is uw telefoonnummer of e-mailadres?",
     "contactPlaceholder": "voorbeeld@email.com of 06-12345678",

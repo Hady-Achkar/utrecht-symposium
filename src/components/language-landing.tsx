@@ -22,22 +22,24 @@ export function LanguageLanding() {
         <div className="bg-white rounded-lg border-t-[10px] border-t-[#673ab7] p-8">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-[#673ab7] mb-4">
-              Utrecht Symposium 2024
+              Symposium Aanmelding
             </h1>
-            <h2 className="text-xl font-normal text-[#202124] mb-4">
-              Symposium Registratie / Registration
-            </h2>
             <p className="text-lg text-[#5f6368] mb-2">
-              📅 15 October / oktober 2024 · 19:30
+              📅 15 October / oktober 2025 · 19:30
             </p>
-            <p className="text-[#5f6368]">
+            <a
+              href="https://maps.app.goo.gl/Q4MLGnDBjHxJE2X47"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#5f6368] hover:text-[#673ab7] hover:underline inline-flex items-center gap-1 transition-colors"
+            >
               📍 Huis van Actief Burgerschap, Bibliotheek Neude, Utrecht
-            </p>
+            </a>
           </div>
 
           <div className="border-t border-[#dadce0] pt-8">
             <p className="text-center text-[#202124] mb-6 text-lg font-medium">
-              Select your language / Selecteer uw taal
+              Selecteer uw taal
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -66,7 +68,8 @@ export function LanguageLanding() {
             <p className="text-center text-xs text-[#70757a]">
               Kansenongelijkheid en de kracht van taal in het basisonderwijs
               <br />
-              Inequality of Opportunity and the Power of Language in Primary Education
+              Inequality of Opportunity and the Power of Language in Primary
+              Education
               <br />
               عدم المساواة في الفرص وقوة اللغة في التعليم الابتدائي
               <br />
