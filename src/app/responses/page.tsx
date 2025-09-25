@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react"
 import { createClient } from "@/lib/supabase"
-import { Loader2, RefreshCw, Download } from "lucide-react"
+import { Loader2, RefreshCw, Download, LogOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import LoginForm from "@/components/LoginForm"
 
 interface Registration {
   id: string
@@ -30,10 +31,15 @@ const languageFlags: Record<string, string> = {
   tr: "🇹🇷",
 }
 
+const VALID_USERNAME = "utrecht-journalists"
+const VALID_PASSWORD = "Hubbies8"
+
 export default function ResponsesPage() {
   const [registrations, setRegistrations] = useState<Registration[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [loginError, setLoginError] = useState("")
 
   const fetchRegistrations = async () => {
     setLoading(true)
@@ -56,7 +62,32 @@ export default function ResponsesPage() {
     }
   }
 
+  const handleLogin = (username: string, password: string) => {
+    if (username === VALID_USERNAME && password === VALID_PASSWORD) {
+      setIsAuthenticated(true)
+      setLoginError("")
+      sessionStorage.setItem("responses_auth", "true")
+    } else {
+      setLoginError("Invalid username or password")
+    }
+  }
+
+  const handleLogout = () => {
+    setIsAuthenticated(false)
+    sessionStorage.removeItem("responses_auth")
+  }
+
   useEffect(() => {
+    const isAuth = sessionStorage.getItem("responses_auth") === "true"
+    setIsAuthenticated(isAuth)
+  }, [])
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      setLoading(false)
+      return
+    }
+
     fetchRegistrations()
 
     // Set up real-time subscription
@@ -79,7 +110,7 @@ export default function ResponsesPage() {
     return () => {
       channel.unsubscribe()
     }
-  }, [])
+  }, [isAuthenticated])
 
   const exportToCSV = () => {
     const headers = ["Name", "Role", "Contact", "Comments", "Language", "Date"]
@@ -95,7 +126,7 @@ export default function ResponsesPage() {
     const csvContent = [
       headers.join(","),
       ...rows.map((row) =>
-        row.map((cell) => `"${cell.replace(/"/g, '""')}"`).join(",")
+        row.map((cell) => `"${cell.replace(/"/g, '""')}`).join(",")
       ),
     ].join("\n")
 
@@ -108,6 +139,10 @@ export default function ResponsesPage() {
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
+  }
+
+  if (!isAuthenticated) {
+    return <LoginForm onLogin={handleLogin} error={loginError} />
   }
 
   if (loading && registrations.length === 0) {
@@ -149,6 +184,14 @@ export default function ResponsesPage() {
               >
                 <Download className="h-4 w-4 mr-2" />
                 Export CSV
+              </Button>
+              <Button
+                onClick={handleLogout}
+                variant="outline"
+                size="sm"
+              >
+                <LogOut className="h-4 w-4 mr-2" />
+                Logout
               </Button>
             </div>
           </div>
