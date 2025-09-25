@@ -24,11 +24,23 @@ export async function POST(request: Request) {
     });
 
     // Send email notification
-    if (process.env.RESEND_API_KEY && process.env.NOTIFICATION_EMAIL) {
+    if (process.env.RESEND_API_KEY) {
       try {
+        // List of email recipients
+        const recipients = [
+          "emma.matthee@outlook.com",
+          "yimgoemans@gmail.com",
+          "jessie.meeus@student.hu.nl",
+          "julia.wille@student.hu.nl",
+          "laurenkooyman@gmail.com",
+          "hadi.m.alachkar@gmail.com",
+          "jetdidi@hotmail.com",
+          "jessiemeeus@hotmail.com",
+        ];
+
         const { data, error } = await resend.emails.send({
           from: process.env.FROM_EMAIL || "Symposium <noreply@resend.dev>",
-          to: [process.env.NOTIFICATION_EMAIL],
+          to: recipients,
           subject: `Nieuwe Symposium Registratie - ${name}`,
           html: `
             <!DOCTYPE html>
@@ -146,9 +158,7 @@ export async function POST(request: Request) {
         // Don't throw error - let the registration continue even if email fails
       }
     } else {
-      console.log(
-        "Email skipped - missing RESEND_API_KEY or NOTIFICATION_EMAIL"
-      );
+      console.log("Email skipped - missing RESEND_API_KEY");
     }
 
     return NextResponse.json({ success: true });

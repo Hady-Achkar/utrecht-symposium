@@ -5,10 +5,10 @@
     "venue": "Aktif Vatandaşlık Evi, Neude Kütüphanesi, Utrecht",
     "name": "Adınız ve soyadınız nedir?",
     "namePlaceholder": "Ahmet Yılmaz",
-    "role": "Veli, politika yapıcı mısınız yoksa okuldan bu konuyla ilgili misiniz?",
+    "role": "Veli, belediye yetkilisi mısınız yoksa okuldan bu konuyla ilgili misiniz?",
     "roleOptions": {
       "parent": "Veli",
-      "policyMaker": "Politika Yapıcı",
+      "policyMaker": "Belediye yetkilisi",
       "expert": "Uzman",
       "school": "Okuldan (öğretmen, müdür vb.)",
       "other": "Diğer (öğrenci)"
