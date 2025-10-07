@@ -1,0 +1,16 @@
+{
+  "crons": [
+    {
+      "path": "/api/schedule-reminders?reminderDate=test",
+      "schedule": "30 16 7 10 *"
+    },
+    {
+      "path": "/api/schedule-reminders?reminderDate=reminder1",
+      "schedule": "0 10 8 10 *"
+    },
+    {
+      "path": "/api/schedule-reminders?reminderDate=reminder2",
+      "schedule": "0 10 14 10 *"
+    }
+  ]
+}
